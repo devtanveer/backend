@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: 'backend-lovat-mu.vercel.app', 
+  origin: 'https://backend-lovat-mu.vercel.app', 
   credentials: true,
   methods: ["POST","GET","DELETE"],
   optionSuccessStatus: 200,
