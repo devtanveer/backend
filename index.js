@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
   origin: '*', // Change this to your actual frontend URL
   credentials: true,
+  methods: ["POST","GET","DELETE"],
   optionSuccessStatus: 200,
 };
 
