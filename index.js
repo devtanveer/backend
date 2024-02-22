@@ -13,11 +13,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
   origin: 'https://frontend-sooty-iota-88.vercel.app', 
   credentials: true,
-  methods: ["POST","GET","DELETE"],
+  methods: ["POST","GET","DELETE"],  // Enable CORS for all origins
+
   optionSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
+
+app.use(cors());
 app.use('/', router);
 
 
