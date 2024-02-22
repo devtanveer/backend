@@ -4,10 +4,10 @@ const bodyParser = require('body-parser');
 const router = require('./routes/router');
 const mongoose = require('mongoose');
 require('dotenv/config');
-import axios from 'axios'
+
 
 const app = express();
-axios.defaults.withCredentials = true;
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -20,8 +20,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-app.use(cors());
 app.use('/', router);
 
 
