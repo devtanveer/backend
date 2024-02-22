@@ -14,18 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
   origin: 'https://frontend-sooty-iota-88.vercel.app', 
   credentials: true,
-  methods: ["POST","GET","DELETE"],  // Enable CORS for all origins
-
+  methods: ["POST","GET","DELETE"],  
   optionSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
 app.use('/', router);
-
-
-app.get("/", (req, res) => {
-  res.json("I am Working");
-});
 
 
 const dbOptions = { useNewUrlParser: true, useUnifiedTopology: true };
