@@ -11,9 +11,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: 'https://frontend-delta-six-53.vercel.app', 
+  origin: '*', // Change this to your actual frontend URL
   credentials: true,
-  methods: ["POST","GET","DELETE"],
   optionSuccessStatus: 200,
 };
 

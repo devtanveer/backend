@@ -16,6 +16,22 @@ const userSchema = new Schema({
     entryDate: { type: Date, default: Date.now }
 });
 
+// Define the complaint schema
+const complaintSchema = new Schema({
+    complaintId: { type: Number, required: true, unique: true },
+    binPhoto: { type: String, required: true }, // Store the file path or URL
+    location: { type: String, required: true },
+    userName: { type: String, required: true },
+    userPhone: { type: String, required: true },
+    binAddress: { type: String, required: true },
+    status: { type: String, default: 'New' }, // Initial status
+    assignedDriver: { type: String } // Add assigned driver field
+});
+
+// Create the Complaint model
+const Complaint = mongoose.model('Complaint', complaintSchema);
+mySchemas.Complaint = Complaint;
+
 // Create the User model
 const User = mongoose.model('User', userSchema);
 
@@ -28,6 +44,38 @@ const contactSchema = new Schema({
     message: { type: String, required: true },
     entryDate: { type: Date, default: Date.now }
 });
+
+
+
+// Define bin region schema
+const binRegionSchema = new mongoose.Schema({
+    regionCode: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    regionName: {
+      type: String,
+      required: true
+    },
+    regionDriver: {
+      type: String,
+      required: true
+    },
+    driverPhone: {
+      type: String,
+      required: true
+    },
+    regionStatus: {
+      type: String,
+      enum: ['Active', 'Inactive'],
+      default: 'Active'
+    }
+  });
+
+
+  const BinRegion = mongoose.model('BinRegion', binRegionSchema);
+  mySchemas.BinRegion = BinRegion;
 
 try {
     // Attempt to create the Users model
