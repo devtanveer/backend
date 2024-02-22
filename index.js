@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: 'https://frontend-ish13lkja-tanveer-faisals-projects-a94a318f.vercel.app/', 
+  origin: 'https://frontend-sooty-iota-88.vercel.app', 
   credentials: true,
   methods: ["POST","GET","DELETE"],
   optionSuccessStatus: 200,
