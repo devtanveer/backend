@@ -20,6 +20,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use('/', router);
 
+
+app.get("/", (req, res) => {
+  res.json("I am Working");
+});
+
+
 const dbOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose
   .connect(process.env.DB_URI, dbOptions)
