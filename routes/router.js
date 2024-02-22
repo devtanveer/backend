@@ -7,7 +7,15 @@ const multer = require('multer'); // Import multer for handling file uploads
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
+const cors = require('cors');
 
+
+app.use(cors());
+
+
+app.use(cors({
+    origin: 'https://frontend-sooty-iota-88.vercel.app',
+}));
 
 // Set up storage for multer
 const storage = multer.diskStorage({
