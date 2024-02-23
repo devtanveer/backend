@@ -8,7 +8,19 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 
+const express = require('express');
+const cors = require('cors');
 
+const app = express();
+
+// Allow requests from specific origin
+const corsOptions = {
+  origin: 'https://frontend-sooty-iota-88.vercel.app',
+  credentials: true, // Allow cookies, authorization headers, etc.
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+};
+
+app.use(cors(corsOptions));
 
 // Set up storage for multer
 const storage = multer.diskStorage({
