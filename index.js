@@ -40,7 +40,7 @@ const server = app.listen(port, () => {
 // Generic error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
-  res.status(500).json({ error: 'Internal Server Error' });
+  res.status(500).json({ error: 'Internal Server Error is there' });
 });
 
 // Gracefully handle process termination
