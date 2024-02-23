@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: 'https://frontend-sooty-iota-88.vercel.app', 
+  origin: 'https://frontend-green-mu.vercel.app', 
   credentials: true,
   methods: ["POST","GET","DELETE"],  
   optionSuccessStatus: 200,
